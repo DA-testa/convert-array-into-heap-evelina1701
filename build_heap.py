@@ -6,10 +6,11 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     size=len(data)
-    left_node = 2*i+1
-    right_node = 2*i+2
+    
 
-    for i in range(n//2,-1,-1):
+    for i in range(size//2,-1,-1):
+        left_node = 2*i+1
+        right_node = 2*i+2
         smallest = i
         if left_node<size and data[left_node]<data[smallest]:
             smallest = left_node
