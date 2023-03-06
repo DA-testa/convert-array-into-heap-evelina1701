@@ -3,7 +3,6 @@
 
 def build_heap(data):
     swaps = []
-    smallest = i
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     size=len(data)
@@ -11,6 +10,7 @@ def build_heap(data):
     right_node = 2*i+2
 
     for i in range(n//2,-1,-1):
+        smallest = i
         if left_node<size and data[left_node]<data[smallest]:
             smallest = left_node
         if right_node<size and data[right_node]<data[smallest]:
