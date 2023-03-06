@@ -10,9 +10,10 @@ def build_heap(data):
 
     for i in range(size//2,-1,-1):
         smallest = i
-        left_node = 2*i+1
-        right_node = 2*i+2
         while True:
+            left_node = 2*i+1
+            right_node = 2*i+2
+            
             if left_node<size and data[left_node]<data[smallest]:
                 smallest = left_node
             if right_node<size and data[right_node]<data[smallest]:
