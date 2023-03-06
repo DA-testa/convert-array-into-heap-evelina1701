@@ -14,9 +14,9 @@ def build_heap(data):
             left_node = 2*i+1
             right_node = 2*i+2
             
-            if left_node<size and data[left_node]<data[smallest]:
+            if left_node<=size-1 and data[left_node]<data[smallest]:
                 smallest = left_node
-            if right_node<size and data[right_node]<data[smallest]:
+            if right_node<=size-1 and data[right_node]<data[smallest]:
                 smallest = right_node
             if i != smallest:
                 swaps.append((i,smallest))
