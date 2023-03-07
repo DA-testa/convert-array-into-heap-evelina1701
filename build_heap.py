@@ -11,13 +11,13 @@ def build_heap(data):
     for i in range(size//2,-1,-1):
         smallest = i
         while True:
-            left_node = 2*i+1
-            right_node = 2*i+2
+            l_node = 2*i+1
+            r_node = 2*i+2
             
-            if left_node<=size-1 and data[left_node]<data[smallest]:
-                smallest = left_node
-            if right_node<=size-1 and data[right_node]<data[smallest]:
-                smallest = right_node
+            if l_node<=size-1 and data[l_node]<data[smallest]:
+                smallest = l_node
+            if r_node<=size-1 and data[r_node]<data[smallest]:
+                smallest = r_node
             if i != smallest:
                 swaps.append((i,smallest))
                 (data[i],data[smallest])=(data[smallest],data[i])
