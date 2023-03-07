@@ -37,7 +37,7 @@ def main():
         fileName = input()
         if "a" in fileName:
             return
-        with open(f"./tests/{fileName}", mode="r") as file:
+        with open("./tests/"+fileName, mode="r") as file:
             n = int(file.readline())
             data = list(map(int, file.readline().split())) 
     if "I" in letter:
