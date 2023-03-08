@@ -6,7 +6,7 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     size=len(data)
-    
+    #
 
     for i in range(size//2,-1,-1):
         smallest = i
