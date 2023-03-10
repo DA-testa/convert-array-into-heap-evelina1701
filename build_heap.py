@@ -9,21 +9,21 @@ def build_heap(data):
     ##
 
     for k in range(size//2,-1,-1):
-        smallest = k
+        small = k
         while True:
             l_node = 2*k+1
             r_node = 2*k+2
             
             if l_node<=size-1:
-                if data[l_node]<data[smallest]:
-                    smallest = l_node
+                if data[l_node]<data[small]:
+                    small = l_node
             if r_node<=size-1:
-                if data[r_node]<data[smallest]:
-                    smallest = r_node
-            if k != smallest:
-                swaps.append((k,smallest))
-                (data[k],data[smallest])=(data[smallest],data[k])
-                k = smallest
+                if data[r_node]<data[small]:
+                    small = r_node
+            if k != small:
+                swaps.append((k,small))
+                (data[k],data[small])=(data[small],data[k])
+                k = small
             else:
                 break
     return swaps
