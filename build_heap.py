@@ -9,21 +9,21 @@ def build_heap(data):
     ##
 
     for k in range(size//2,-1,-1):
-        small = k
+        small = k #tiek inicializēta mazākā sakne
         while True:
-            l_node = 2*k+1
-            r_node = 2*k+2
+            l_node = 2*k+1 #kreisais node
+            r_node = 2*k+2 #labais node
             
-            if l_node<=size-1:
-                if data[l_node]<data[small]:
-                    small = l_node
-            if r_node<=size-1:
-                if data[r_node]<data[small]:
-                    small = r_node
-            if k != small:
-                swaps.append((k,small))
+            if l_node<=size-1: #tiek pārbaudīts, vai eksistē kreisais node
+                if data[l_node]<data[small]: #ja kreisais node eksistē, tad tas tiek salīdzināts ar sakni
+                    small = l_node #ja kreisais node ir mazāks par sakni, tad kā mazāko sakni inicializē kreiso node
+            if r_node<=size-1: #tiek pārbaudīts, vai eksistē labais node
+                if data[r_node]<data[small]: #ja labais node eksistē, tad tas tiek salīdzināts ar sakni
+                    small = r_node #ja labais node ir mazāks par sakni, tad kā mazāko sakni inicializē labo node
+            if k != small: #tiek nomainīta sakne, ja node ir mazāks par iepriekšējo sakni
+                swaps.append((k,small)) #tiek saglabāti node indeksi, kuri tika apmainīti vietām
                 (data[k],data[small])=(data[small],data[k])
-                k = small
+                k = small #inicializē jaunu mazāko sakni
             else:
                 break
     return swaps
