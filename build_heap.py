@@ -28,7 +28,6 @@ def build_heap(data):
                 break
     return swaps
 
-
 def main():
     
     # TODO : add input and corresponding checks
